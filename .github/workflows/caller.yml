@@ -27,6 +27,6 @@ jobs:
           path: build
           key: build-${{ hashFiles('src/**', 'Makefile') }}
       - name: 빌드
-        if: steps.cache.outputs.cache-hit != 'false'
+        if: steps.cache.outputs.cache-hit != 'true'
         run: make
       - run: ls -la build    
