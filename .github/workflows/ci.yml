@@ -14,5 +14,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "빌드 타입은 ${{ inputs.build_type }}"
+      - name: 전체 ECU 빌드 (흐름만)
+        env:
+          BRANCH: ${{ github.ref_name }}
+        run: bash scripts/build-all.sh "$BRANCH"
     
