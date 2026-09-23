@@ -1,5 +1,8 @@
 name: Lab2 CI
 on:
+  push:
+    paths:
+      - 'src/**'
   workflow_dispatch:
     inputs:
       build_type:
